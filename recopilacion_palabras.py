@@ -1,4 +1,4 @@
-def recopilacion_palabras(libro):
+def crear_diccionario(libro):
     with open(libro, "r", encoding="utf-8") as file:
         texto=file.read().lower()
         
