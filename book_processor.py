@@ -13,7 +13,7 @@ def process_book(libro):
     libro_lematizado = []
     for token in doc:
         if not token.is_space:
-        libro_lematizado.append(token.lemma_)
+            libro_lematizado.append(token.lemma_)
 
     return libro_lematizado, libro.split()
 #regresa lista del libro con palabras lematizadas y originales, respectivamente
