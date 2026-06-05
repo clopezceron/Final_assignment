@@ -35,8 +35,12 @@ def show_statistics(libro):
     for palabra in frecuencias:
         if frecuencias[palabra]==0:
             i+=1
-    
-    
+    print("The number of unique words in the book is: ", i)
+    j=0
+    for palabra in frecuencias_lemas:
+        if frecuencias_lemas[palabra]==0:
+            j+=1
+    print("The number of unique lemas in the book is: ", j)
 
 show_statistics('libro_de_prueba.txt')
 
