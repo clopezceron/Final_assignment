@@ -26,13 +26,21 @@ def get_top(libro,n):
     dic_top_palabras={}
     dic_top_frecuencias={}
     for i in top_palabras:
+        if i==0:
+            print("No more words to show")
+            break
+        else:
             for palabra in frecuencias:
-                    if frecuencias[palabra]==i:
-                            dict_top_palabras[palabra]=i
+                if frecuencias[palabra]==i:
+                    dict_top_palabras[palabra]=i
      for i in top_lemas:
-            for palabra in frecuencias_lemas:
-                    if frecuencias_lemas[palabra]==i:
-                            dict_top_frecuencias[palabra]=i                       
+         if i==0:
+             print("No more lemas to show")
+             break
+         else:
+             for palabra in frecuencias_lemas:
+                 if frecuencias_lemas[palabra]==i:
+                     dict_top_frecuencias[palabra]=i                       
                             
         
     return dic_top_palabras, dic_top_lemas
