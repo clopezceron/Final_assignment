@@ -1,4 +1,4 @@
-from book_processor import process_book
+Yfrom book_processor import process_book
 
 with open(lista_de_palabras, "r", encoding="utf-8") as file:
         lista_palabras=file.read().lower().split()
