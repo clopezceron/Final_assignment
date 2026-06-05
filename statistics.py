@@ -1,4 +1,4 @@
-Yfrom book_processor import process_book
+from book_processor import process_book
 
 with open(lista_de_palabras, "r", encoding="utf-8") as file:
         lista_palabras=file.read().lower().split()
@@ -27,11 +27,11 @@ def get_top(libro,n):
 
 def show_statistics(libro):
     frecuencias, frecuencias_lemas= get_frecuencias(libro,10)
-    print("The dictionary used cointain ", len(lista_palabras)," words")
-    print("The number of total words and lemmas in the book is: ", len(libro_normal))
+    print("The dictionary used cointain ", len(lista_palabra)," words")
+    print("The number of total words (and lemmas) in the book is: ", sum(frecuencias.values()))
     print("The number of different words in the book is: ", len(frecuencias))
     print("The numbrer of different lemmas in the book is: ", len(frecuencias_lemas))
-    i=0
+    i=0  
     for palabra in frecuencias:
         if frecuencias[palabra]==0:
             i+=1
