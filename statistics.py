@@ -15,15 +15,27 @@ def get_frecuencias(libro):
     return frecuencias, frecuencias_lemas
                 
 def get_top(libro,n): 
-    #devuelve listas con cantidades de palabras y lemas más repetidos
-    frecuencias, frecuencias_lemas= get_frecuencias(libro,n)
+    #devuelve diccionario con n palabras/lemas: cantidades de palabras/ lemas más repetidos
+    frecuencias, frecuencias_lemas= get_frecuencias(libro)
     lista_frecuencias=list(frecuencias.values())
     lista_frecuencias.sort()
     top_palabras=lista_frecuencias[0:n]
     lista_frecuencias_lemas=list(frecuencias_lemas.values())
     lista_frecuencias_lemas.sort()
     top_lemas=lista_frecuencias_lemas[0:n]
-    return top_palabras, top_lemas
+    dic_top_palabras={}
+    dic_top_frecuencias={}
+    for i in top_palabras:
+            for palabra in frecuencias:
+                    if frecuencias[palabra]==i:
+                            dict_top_palabras[palabra]=i
+     for i in top_lemas:
+            for palabra in frecuencias_lemas:
+                    if frecuencias_lemas[palabra]==i:
+                            dict_top_frecuencias[palabra]=i                       
+                            
+        
+    return dic_top_palabras, dic_top_lemas
 
 def show_statistics(libro):
     frecuencias, frecuencias_lemas= get_frecuencias(libro,10)
@@ -41,8 +53,13 @@ def show_statistics(libro):
         if frecuencias_lemas[palabra]==0:
             j+=1
     print("The number of unique lemas in the book is: ", j)
-
-show_statistics('libro_de_prueba.txt')
+    top_palabras, top_lemas=get_top(libro, 10)
+    print("The 10 most used words with the amount of times used are: ",top_palabras)
+    print("The 10 most used lemas with the amount of times used are: ",top_palabras)
+    
+    
+        
+    show_statistics('libro_de_prueba.txt')
 
 
         
