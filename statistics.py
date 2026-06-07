@@ -1,7 +1,6 @@
 from book_processor import process_book
-
-with open(lista_de_palabras, "r", encoding="utf-8") as file:
-        lista_palabras=file.read().lower().split()
+from dictionary_processor import process_dictionary
+lista_palabras=process_dictionary(diccionario)
  
 def get_frecuencias(libro):
 #devuelve diccionarios con palabra/lema : frecuencia
