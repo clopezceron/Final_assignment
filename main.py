@@ -17,7 +17,7 @@ works_files = args.works.split(",")
 for work in works_files:
     with open(work, "r", encoding="utf-8") as file:
          libro=file.read().lower()
-    =process_book(work)
-    #regresa libro en forma de lista con palabras lematizadas[0] y originales[1], y en forma de string lemetizado[2] y original[3], recibe el libro en forma de string
+    libro_limpio=process_book(libro)
+    #libro en forma de lista con palabras lematizadas[0] y originales[1], y en forma de string lemetizado[2] y original[3]
     if args.dictionary_stats:
         
