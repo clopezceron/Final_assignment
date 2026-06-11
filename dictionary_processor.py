@@ -1,5 +1,5 @@
 def get_frecuencias(libro_normal,libro_lematizado):
-#devuelve diccionarios con palabra/lema : frecuencia
+#devuelve diccionarios con palabra/lema : frecuencia, recibe listas 
     frecuencias=dict.fromkeys(libro_normal)
     frecuencias_lemas=dict.fromkeys(libro_lematizado)   
     for palabra in frecuencias:
