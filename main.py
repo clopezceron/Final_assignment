@@ -13,3 +13,8 @@ args = parser.parse_args()
  with open(args.dictionary, "r", encoding="utf-8") as file:
         lista_palabras=file.read().lower().split()
   
+works_files = args.works.split(",")
+if len(works_files)==1:
+     with open(works_files[0], "r", encoding="utf-8") as file:
+         libro=file.read().lower()
+ 
