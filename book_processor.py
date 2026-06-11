@@ -14,7 +14,6 @@ def process_book(libro):
             libro_lematizado.append(token.lemma_)
 
     return libro_lematizado, libro.split(), libro_lematizado.join(), libro
-#regresa libro en forma de lista con palabras lematizadas[0] y originales[1], y en forma de string lemetizado[3] y original[4]
- y
+#regresa libro en forma de lista con palabras lematizadas[0] y originales[1], y en forma de string lemetizado[2] y original[3], recibe el libro en forma de string
 
   
