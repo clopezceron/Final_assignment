@@ -1,4 +1,6 @@
-
+from book_processor import process_book
+from statistics import show_statistics
+from frecuencies_calculator import get_frecuencias
 import argparse
 
 parser = argparse.ArgumentParser(description="Literature Analyzer")
@@ -19,5 +21,9 @@ for work in works_files:
          libro=file.read().lower()
     libro_limpio=process_book(libro)
     #libro en forma de lista con palabras lematizadas[0] y originales[1], y en forma de string lemetizado[2] y original[3]
+    frecuencias, frecuencias_lemas=get_frecuencias(libro_limpio[1],libro_limpio[0])
     if args.dictionary_stats:
+        show_statistics(frecuencias, frecuencias_lemas)
+     
+     
         
