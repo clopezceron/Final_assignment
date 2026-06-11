@@ -13,7 +13,7 @@ parser.add_argument("--frequencies",type=int,help="Show the n most frequent word
 args = parser.parse_args()
 
  with open(args.dictionary, "r", encoding="utf-8") as file:
-        lista_palabras=file.read().lower().split()
+        diccionario=file.read().lower().split()
   
 works_files = args.works.split(",")
 for work in works_files:
@@ -23,7 +23,7 @@ for work in works_files:
     #libro en forma de lista con palabras lematizadas[0] y originales[1], y en forma de string lemetizado[2] y original[3]
     frecuencias, frecuencias_lemas=get_frecuencias(libro_limpio[1],libro_limpio[0])
     if args.dictionary_stats:
-        show_statistics(frecuencias, frecuencias_lemas)
+        show_statistics(frecuencias, frecuencias_lemas, diccionario)
      
      
         
