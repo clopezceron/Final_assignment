@@ -14,7 +14,10 @@ args = parser.parse_args()
         lista_palabras=file.read().lower().split()
   
 works_files = args.works.split(",")
-if len(works_files)==1:
-     with open(works_files[0], "r", encoding="utf-8") as file:
+for work in works_files:
+    with open(work, "r", encoding="utf-8") as file:
          libro=file.read().lower()
- 
+    =process_book(work)
+    #regresa libro en forma de lista con palabras lematizadas[0] y originales[1], y en forma de string lemetizado[2] y original[3], recibe el libro en forma de string
+    if args.dictionary_stats:
+        
