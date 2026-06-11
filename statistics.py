@@ -1,3 +1,4 @@
+from tops_obtainer import get_top
 def show_statistics(frecuencias, frecuencias_lemas):
     print("The dictionary used cointain ", len(lista_palabra)," words")
     print("The number of total words (and lemmas) in the book is: ", sum(frecuencias.values()))
