@@ -23,7 +23,8 @@ for work in works_files:
     #libro en forma de lista con palabras lematizadas[0] y originales[1], y en forma de string lemetizado[2] y original[3]
     frecuencias, frecuencias_lemas=get_frecuencias(libro_limpio[1],libro_limpio[0])
     if args.dictionary_stats:
-        show_statistics(frecuencias, frecuencias_lemas, diccionario)
-     
+        print('The statistics for the book ',work ,' are as follows') 
+        estadisticas=show_statistics(frecuencias, frecuencias_lemas, diccionario)
+        if #falta imprimer en conjunto     
      
         
