@@ -1,19 +1,3 @@
-from book_processor import process_book
-from dictionary_processor import process_dictionary
-with open(dictionary, "r", encoding="utf-8") as file:
-        lista_palabras=file.read().lower().split()
-
- 
-def get_frecuencias(libro):
-#devuelve diccionarios con palabra/lema : frecuencia
-    libro_normal,libro_lematizado=process_book(libro)
-    frecuencias=dict.fromkeys(libro_normal)
-    frecuencias_lemas=dict.fromkeys(libro_lematizado)   
-    for palabra in frecuencias:
-        frecuencias[palabra]=libro_normal.count(palabra)
-    for palabra in frecuencias_lemas:
-        frecuencias_lemas[palabra]=libro_lematizado.count(palabra)  
-    return frecuencias, frecuencias_lemas
                 
 def get_top(libro,n): 
     #devuelve diccionario con n palabras/lemas: cantidades de palabras/ lemas más repetidos
