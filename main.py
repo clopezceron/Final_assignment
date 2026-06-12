@@ -1,5 +1,6 @@
 from book_processor import process_book
-from statistics import show_statistics
+from statistics import make_statistics
+from statistics import show_single_statistics
 from statistics import show_total_statistics
 from frecuencies_calculator import get_frecuencias
 import argparse
@@ -17,31 +18,21 @@ args = parser.parse_args()
         diccionario=file.read().lower().split()
   
 works_files = args.works.split(",")
-conjunto_frecuencias=[]
-conjunto_frecuencias_lemas=[]
-conjunto_numero_palabras=[]
-conjunto_palabras_unicas=[]
-conjunto_lemas_unicos=[]
-conjunto_top_palabras=[]
-conjunto_top_lemas=[]
+libros_juntos=""
 for work in works_files:
     with open(work, "r", encoding="utf-8") as file:
          libro=file.read().lower()
+    libros_juntos=" "+libro
     libro_limpio=process_book(libro)
     #libro en forma de lista con palabras lematizadas[0] y originales[1], y en forma de string lemetizado[2] y original[3]
-    frecuencias, frecuencias_lemas=get_frecuencias(libro_limpio[1],libro_limpio[0])
-    conjunto_frecuencias.append(frecuencias)
-    conjunto_frecuencias_lemas.append(frecuencias_lemas)
- 
+    frecuencias, frecuencias_lemas=get_frecuencias(libro_limpio[1],libro_limpio[0]) 
     if args.dictionary_stats:
-        print('The statistics for the file ',work ,' are as follows') 
-        numero_palabras,palabras_unicas,lemas_unicos, top_palabras,top_lemas=show_statistics(frecuencias, frecuencias_lemas, diccionario)
-        conjunto_numero_palabras.append(numero_palabras)
-        conjunto_palabras_unicas.append(palabras_unicas)
-        conjunto_lemas_unicos.append(lemas_unicos)
-        conjunto_top_palabras.append(top_palabras)
-        conjunto_top_lemas.append(top_lemas)                         
+        numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas=make_statistics(frecuencias, frecuencias_lemas, diccionario): 
+        show_single_statistics(work,numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas)
+                         
 if args.dictionary_stats and len(work_files)>1:
-    show_total_statistics(conjunto_numero_palabras,conjunto_palabras_unicas,conjunto_lemas_unicos,
-                          conjunto_top_palabras,conjunto_top_lemas,conjunto_frecuencias, conjunto_frecuencias_lemas)
-        
+    libros_juntos_limpio=process_book(libros_juntos)
+    frecuencias, frecuencias_lemas=get_frecuencias(libros_juntos_limpio[1],libros_juntos_limpio[0]) 
+    numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas=make_statistics(frecuencias, frecuencias_lemas, diccionario): 
+    show_total_statistics(numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas)
+                             
