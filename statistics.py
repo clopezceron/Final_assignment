@@ -29,7 +29,7 @@ def make_statistics(frecuencias, frecuencias_lemas, diccionario, libro_en_string
     
     return numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas, abc, nuevos_caracteres
 
-def show_single_statistics(file,numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas):
+def show_single_statistics(file,numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas, abc, nuevos_caracteres):
     print('The statistics for the file ', file,' are below')
     print("The dictionary used cointain ", numero_palabras_diccionario," words")
     print("The number of total words (and lemmas) in the book is: ", numero_palabras)
@@ -39,8 +39,12 @@ def show_single_statistics(file,numero_palabras_diccionario,numero_palabras,nume
     print("The number of unique lemas in the book is: ", numero_lemas_unicos)
     print("The 10 most used words with the amount of times used are: ",top_palabras)
     print("The 10 most used lemas with the amount of times used are: ",top_lemas)
+    print('The used letters with the number of its ocurrences in the book are: ')
+    print(abc[1:])
+    print('Other caracters found in the book are: ')
+    print(nuevos_caracteres)
 
-def show_total_statistics(numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas):   
+def show_total_statistics(numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas, abc, nuevos_caracteres):   
     print('The overall statistics for the books as a total for all files is below')
     print("The dictionary used cointain ", numero_palabras_diccionario," words")
     print("The overall number of words (and lemmas) in all of the books is: ", numero_palabras)
@@ -50,3 +54,7 @@ def show_total_statistics(numero_palabras_diccionario,numero_palabras,numero_pal
     print("The overall number of unique lemas in all of the the books is: ", numero_lemas_unicos)
     print("The 10 most used words with the amount of times used in all of the books are: ",top_palabras)
     print("The 10 most used lemas with the amount of times used in all of the books are: ",top_lemas))
+    print('The used letters with the number of its ocurrences in all of the books are: ')
+    print(abc[1:])
+    print('Other caracters found in the books are: ')
+    print(nuevos_caracteres)
