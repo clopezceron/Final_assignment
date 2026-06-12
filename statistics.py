@@ -32,12 +32,18 @@ def show_total_statistics(conjunto_numero_palabras,conjunto_palabras_unicas,conj
                           conjunto_top_palabras,conjunto_top_lemas,conjunto_frecuencias, conjunto_frecuencias_lemas):
     print('The overall statistics for all files are shown below')
     print('The total of words in all the files is: ', sum(conjunto_numero_palabras))
-    palabras_unicas_resultantes=conjunto_palabras_unicas[0].
+    palabras_unicas_resultantes=conjunto_palabras_unicas[0]
     for lista in conjunto_palabras_unicas[1:]:
         for palabra in lista:
             if palabra not in palabras_unicas_resultantes:
                 palabras_unicas_resultantes.append(palabra)      
     print('The total number of unique words is: ', len(palabras_unicas_resultantes))
+    lemas_unicos_resultantes=conjunto_lemas_unicos[0]
+    for lista in conjunto_lemas_unicos[1:]:
+        for palabra in lista:
+            if palabra not in lemas_unicos_resultantes:
+                lemas_unicos_resultantes.append(palabra)      
+    print('The total number of unique lemas is: ', len(lemas_unicos_resultantes))
     
     
     
