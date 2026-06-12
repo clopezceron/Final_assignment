@@ -1,4 +1,3 @@
-import numpy as np
 from tops_obtainer import get_top
 def show_statistics(frecuencias, frecuencias_lemas, diccionario):
     print("The dictionary used cointain ", len(diccionario)," words")
@@ -28,6 +27,6 @@ def show_statistics(frecuencias, frecuencias_lemas, diccionario):
     print("The 10 most used words with the amount of times used are: ",top_palabras)
     print("The 10 most used lemas with the amount of times used are: ",top_lemas)
     return numero_palabras,palabras_unicas,lemas_unicos, top_palabras,top_lemas
-
+def total_statistics(numero_palabras,palabras_unicas,lemas_unicos, top_palabras,top_lemas, frecuencias_totales)
     
     
