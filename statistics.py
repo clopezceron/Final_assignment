@@ -1,4 +1,4 @@
-from tops_obtainer import get_top
+rom tops_obtainer import get_top
 def make_statistics(frecuencias, frecuencias_lemas, diccionario, libro_en_string):
     numero_palabras=sum(frecuencias.values())
     numero_palabras_distintas=len(frecuencias)              
@@ -53,7 +53,7 @@ def show_total_statistics(numero_palabras_diccionario,numero_palabras,numero_pal
     print("The overall number of unique words in all of the books is: ", numero_palabras_unicas)
     print("The overall number of unique lemas in all of the the books is: ", numero_lemas_unicos)
     print("The 10 most used words with the amount of times used in all of the books are: ",top_palabras)
-    print("The 10 most used lemas with the amount of times used in all of the books are: ",top_lemas))
+    print("The 10 most used lemas with the amount of times used in all of the books are: ",top_lemas)
     print('The used letters with the number of its ocurrences in all of the books are: ')
     print(abc[1:])
     print('Other caracters found in the books are: ')
