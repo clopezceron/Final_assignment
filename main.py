@@ -35,4 +35,6 @@ if args.dictionary_stats and len(work_files)>1:
     frecuencias, frecuencias_lemas=get_frecuencias(libros_juntos_limpio[1],libros_juntos_limpio[0]) 
     numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas=make_statistics(frecuencias, frecuencias_lemas, diccionario): 
     show_total_statistics(numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas)
-                             
+    print ('Number of files= ',len(work_files))    
+elif args.dictionary_stats and len(work_files)==1:
+    print ('Number of files= ',1)
