@@ -16,7 +16,9 @@ def make_statistics(frecuencias, frecuencias_lemas, diccionario):
     top_palabras, top_lemas=get_top(frecuencias, frecuencias_lemas, 10)
     numero_palabras_diccionario=len(diccionario)
     return numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas
+
 def show_single_statistics(file,numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas):
+    print('The statistics for the file ', file,' are below')
     print("The dictionary used cointain ", numero_palabras_diccionario," words")
     print("The number of total words (and lemmas) in the book is: ", numero_palabras)
     print("The number of different words in the book is: ",numero_palabras_distintas ) 
@@ -25,6 +27,7 @@ def show_single_statistics(file,numero_palabras_diccionario,numero_palabras,nume
     print("The number of unique lemas in the book is: ", numero_lemas_unicos)
     print("The 10 most used words with the amount of times used are: ",top_palabras)
     print("The 10 most used lemas with the amount of times used are: ",top_lemas)
+
 def show_total_statistics(numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas):   
     print('The overall statistics for the books as a total for all files is below')
     print("The dictionary used cointain ", numero_palabras_diccionario," words")
