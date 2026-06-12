@@ -1,5 +1,6 @@
 from book_processor import process_book
 from statistics import show_statistics
+from statistics import show_total_statistics
 from frecuencies_calculator import get_frecuencias
 import argparse
 
@@ -16,6 +17,7 @@ args = parser.parse_args()
         diccionario=file.read().lower().split()
   
 works_files = args.works.split(",")
+estadisticas={}
 for work in works_files:
     with open(work, "r", encoding="utf-8") as file:
          libro=file.read().lower()
@@ -24,7 +26,7 @@ for work in works_files:
     frecuencias, frecuencias_lemas=get_frecuencias(libro_limpio[1],libro_limpio[0])
     if args.dictionary_stats:
         print('The statistics for the book ',work ,' are as follows') 
-        estadisticas=show_statistics(frecuencias, frecuencias_lemas, diccionario)
-        if #falta imprimer en conjunto     
-     
+        estadisticas[work]=show_statistics(frecuencias, frecuencias_lemas, diccionario)
+    if args.dictionary_stats and len(work_files)>1:
+        show_total_statistics(estadisticas)
         
