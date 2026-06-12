@@ -1,3 +1,5 @@
+from tops_obtainer import get_top
+from no_words import find_new_words
 from book_processor import process_book
 from statistics import make_statistics
 from statistics import show_single_statistics
