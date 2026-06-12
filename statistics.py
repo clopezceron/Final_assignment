@@ -27,6 +27,17 @@ def show_statistics(frecuencias, frecuencias_lemas, diccionario):
     print("The 10 most used words with the amount of times used are: ",top_palabras)
     print("The 10 most used lemas with the amount of times used are: ",top_lemas)
     return numero_palabras,palabras_unicas,lemas_unicos, top_palabras,top_lemas
-def total_statistics(numero_palabras,palabras_unicas,lemas_unicos, top_palabras,top_lemas, frecuencias_totales)
+    # regresa entero, lista, lista,diccionario,diccionario
+def show_total_statistics(conjunto_numero_palabras,conjunto_palabras_unicas,conjunto_lemas_unicos,
+                          conjunto_top_palabras,conjunto_top_lemas,conjunto_frecuencias, conjunto_frecuencias_lemas):
+    print('The overall statistics for all files are shown below')
+    print('The total of words in all the files is: ', sum(conjunto_numero_palabras))
+    palabras_unicas_resultantes=conjunto_palabras_unicas[0].
+    for lista in conjunto_palabras_unicas[1:]:
+        for palabra in lista:
+            if palabra not in palabras_unicas_resultantes:
+                palabras_unicas_resultantes.append(palabra)      
+    print('The total number of unique words is: ', len(palabras_unicas_resultantes))
+    
     
     
