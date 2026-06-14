@@ -5,6 +5,7 @@ from statistics import make_statistics
 from statistics import show_single_statistics
 from statistics import show_total_statistics
 from frecuencies_calculator import get_frecuencias
+from similarity_function import compare
 import argparse
 
 parser = argparse.ArgumentParser(description="Literature Analyzer")
@@ -54,5 +55,10 @@ if args.frequencies is not None:
     print('The ', args.frequencies, ' most frequent lemas used by the master with their counters are shown below')
     print(dic_top_lemas)
 
-
-     
+if args.compare is not None:
+    libro_limpio1=process_book(args.compare[0])
+    frecuencias1, frecuencias_lemas1= get_frecuencias(libro_limpio1[1],libro_limpio1[0])
+    libro_limpio2=process_book(args.compare[1])
+    frecuencias2, frecuencias_lemas2= get_frecuencias(libro_limpio2[1],libro_limpio2[0])
+    puntuacion_total= compare(frecuencias1, frecuencias_lemas1,frecuencias2, frecuencias_lemas2,diccionario, libro_limpio1[3], libro_limpio2[3] )
+    print ('The books are ',  puntuacion_total, '% similar ') 
