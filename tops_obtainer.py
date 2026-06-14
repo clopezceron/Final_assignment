@@ -8,11 +8,13 @@ def get_top(frecuencias, frecuencias_lemas,n):
     top_lemas=lista_frecuencias_lemas[0:n]
     dic_top_palabras={}
     dic_top_lemas={}
-    for palabra in frecuencias:
-        if frecuencias[palabra]==i:
-            dic_top_palabras[palabra]=i
-    for palabra in frecuencias_lemas:
-        if frecuencias_lemas[palabra]==i:
-            dic_top_lemas[palabra]=i                       
+    for i in top_palabras:
+        for palabra in frecuencias:
+            if frecuencias[palabra]==i:
+                dic_top_palabras[palabra]=i
+    for i in top_lemas:
+        for palabra in frecuencias_lemas:
+            if frecuencias_lemas[palabra] == i:
+               dic_top_lemas[palabra] = i                       
                 
     return dic_top_palabras, dic_top_lemas
