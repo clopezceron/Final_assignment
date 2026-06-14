@@ -8,7 +8,7 @@ def coseno_angulo(u,v):
     cos_theta = producto_punto / (norma_u * norma_v)
     return cos_theta
 def crear_vectores(abecedario,frecuencias, frecuencias_lemas, palabras_totales):
-    top_palabras, top_lemas=get_top(frecuencias, frecuencias_lemas, 200)
+    top_palabras, top_lemas=get_top(frecuencias, frecuencias_lemas, 150)
     vector_top_palabras =np.array(list(top_palabras.values()))*100/palabras_totales
     vector_top_lemas =np.array(list(top_lemas.values()))*100/palabras_totales
     vector_abc =np.array(list(abecedario.values()))*100/palabras_totales
