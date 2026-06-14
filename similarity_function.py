@@ -35,5 +35,5 @@ def comparar2a2(frecuencias1, frecuencias_lemas1,frecuencias2, frecuencias_lemas
     puntuacion_total= puntuacion1+ puntuacion2 + puntuacion3+ puntuacion4+ puntuacion5 + puntuacion6+ puntuacion7
     return puntuacion_total
 
-def 
+
     
