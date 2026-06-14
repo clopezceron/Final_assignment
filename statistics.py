@@ -24,7 +24,7 @@ def make_statistics(frecuencias, frecuencias_lemas, diccionario, libro_en_string
         abc[letra]=libro_en_lista.count(letra)
   
     for letra in libro_en_lista:
-        if letra not in abc_lista or letra not in nuevos_caracteres:
+        if letra not in abc_lista and letra not in nuevos_caracteres:
             nuevos_caracteres[letra]=libro_en_lista.count(letra)
     
     return numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas, abc, nuevos_caracteres
