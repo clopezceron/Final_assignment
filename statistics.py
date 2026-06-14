@@ -16,7 +16,7 @@ def make_statistics(frecuencias, frecuencias_lemas, diccionario, libro_en_string
     top_palabras, top_lemas=get_top(frecuencias, frecuencias_lemas, 10)
     numero_palabras_diccionario=len(diccionario)
     
-    abc_lista=[' ','a','b','c','d','e','f','g','h','i','j','k','l','m','n','ñ','o','p','q','r','s','t','u','v','w','x','y','z', 'á', 'é', 'í', 'ó','ú']
+    abc_lista=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','ñ','o','p','q','r','s','t','u','v','w','x','y','z', 'á', 'é', 'í', 'ó','ú']
     abc=dict.fromkeys(abc_lista)
     nuevos_caracteres={}
     libro_en_lista=list(libro_en_string)
@@ -24,7 +24,7 @@ def make_statistics(frecuencias, frecuencias_lemas, diccionario, libro_en_string
         abc[letra]=libro_en_lista.count(letra)
   
     for letra in libro_en_lista:
-        if letra not in abc_lista and letra not in nuevos_caracteres:
+        if letra not in abc_lista and letra not in nuevos_caracteres and letra!= " ":
             nuevos_caracteres[letra]=libro_en_lista.count(letra)
     
     return numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas, abc, nuevos_caracteres
