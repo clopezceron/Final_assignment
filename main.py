@@ -16,8 +16,8 @@ parser.add_argument("-n","--frequencies",type=int,help="Show the n most frequent
 
 args = parser.parse_args()
 
- with open(args.dictionary, "r", encoding="utf-8") as file:
-        diccionario=file.read().lower().split()
+with open(args.dictionary, "r", encoding="utf-8") as file:
+    diccionario=file.read().lower().split()
   
 works_files = args.works.split(",")
 libros_juntos=""
@@ -25,7 +25,7 @@ libros_juntos=""
 for work in works_files:
     with open(work, "r", encoding="utf-8") as file:
          libro=file.read().lower()
-    libros_juntos=" "+libro
+    libros_juntos += " " + libro
     libro_limpio=process_book(libro)
     #libro en forma de lista con palabras lematizadas[0] y originales[1], y en forma de string lemetizado[2] y original[3]
     frecuencias, frecuencias_lemas=get_frecuencias(libro_limpio[1],libro_limpio[0]) 
@@ -36,15 +36,15 @@ for work in works_files:
                          
 libros_juntos_limpio=process_book(libros_juntos)
 frecuencias, frecuencias_lemas=get_frecuencias(libros_juntos_limpio[1],libros_juntos_limpio[0]) 
-if args.dictionary_stats and len(work_files)>1:
-    numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas=make_statistics(frecuencias, frecuencias_lemas, diccionario,libros_juntos_limpio[3]): 
+if args.dictionary_stats and len(works_files)>1:
+    numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas, abc, nuevos_caracteres=make_statistics(frecuencias, frecuencias_lemas, diccionario,libros_juntos_limpio[3]): 
     show_total_statistics(numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas, abc, nuevos_caracteres)
-    print ('Number of files= ',len(work_files))    
-    elif args.dictionary_stats and len(work_files)==1:
+    print ('Number of files= ',len(works_files))    
+elif args.dictionary_stats and len(works_files)==1:
         print ('Number of files= ',1)
      
 if args.no_words:
-    find_new_words(libros_juntos_limpio)
+    find_new_words(libros_juntos_limpio[1],diccionario)
 
 if args.frequencies is not None:
     dic_top_palabras, dic_top_lemas=get_top(frecuencias, frecuencias_lemas,args.frequencies)
