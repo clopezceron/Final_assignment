@@ -15,7 +15,7 @@ def crear_vectores(abecedario,frecuencias, frecuencias_lemas, palabras_totales):
     return vector_top_palabras, vector_top_lemas, vector_abc   
      
   
-def comparar2a2(frecuencias1, frecuencias_lemas1,frecuencias2, frecuencias_lemas2,diccionario, libro_en_string1,libro_en_string2 ):
+def compare(frecuencias1, frecuencias_lemas1,frecuencias2, frecuencias_lemas2,diccionario, libro_en_string1,libro_en_string2 ):
     numero_palabras_diccionario, palabras_totales1,numero_palabras_distintas1,numero_lemas_distintos1,numero_palabras_unicas1, numero_lemas_unicos1, top_palabras1, top_lemas1, abecdario1, nuevos_caracteres1 =make_statistics(frecuencias1, frecuencias_lemas1, diccionario, libro_en_string1)
     numero_palabras_diccionario, palabras_totales2,numero_palabras_distintas2,numero_lemas_distintos2,numero_palabras_unicas2, numero_lemas_unicos2, top_palabras2, top_lemas2, abecdario2, nuevos_caracteres2 =make_statistics(frecuencias2, frecuencias_lemas2, diccionario, libro_en_string2)
     
