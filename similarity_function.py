@@ -25,13 +25,13 @@ def comparar2a2(frecuencias1, frecuencias_lemas1,frecuencias2, frecuencias_lemas
     numero_palabras_nuevas2= len(nuevos_caracteres2)
     numero_lemas_totales1=sum(list(frecuencias_lemas1.values()))
     numero_lemas_totales2=sum(list(frecuencias_lemas2.values()))
-    puntuacion1=coseno_angulo(vector_top_palabras1, vector_top_palabras2)*20
-    puntuacion2=coseno_angulo(vector_top_lemas1, vector_top_lemas2)*20
-    puntuacion3=coseno_angulo(vector_abc1, vector_abc2)*20
-    puntuacion4= 1- abs((numero_palabras_distintas1/palabras_totales1)-( numero_palabras_distintas2/palabras_totales2))*10
-    puntuacion5= 1- abs((numero_palabras_unicas1/palabras_totales1)-( numero_palabras_unicas2/palabras_totales2))*10
-    puntuacion6= 1- abs((numero_lemas_totales1/palabras_totales1)-(numero_lemas_totales2/palabras_totales2))*10
-    puntuacion7= 1- abs((numero_palabras_nuevas1/palabras_totales1)-(numero_palabras_nuevas2/palabras_totales2))*10
+    puntuacion1=coseno_angulo(vector_top_palabras1, vector_top_palabras2)*(100/7)
+    puntuacion2=coseno_angulo(vector_top_lemas1, vector_top_lemas2)*(100/7)
+    puntuacion3=coseno_angulo(vector_abc1, vector_abc2)*(100/7)
+    puntuacion4= 1- abs((numero_palabras_distintas1/palabras_totales1)-( numero_palabras_distintas2/palabras_totales2))*(100/7)
+    puntuacion5= 1- abs((numero_palabras_unicas1/palabras_totales1)-( numero_palabras_unicas2/palabras_totales2))*(100/7)
+    puntuacion6= 1- abs((numero_lemas_totales1/palabras_totales1)-(numero_lemas_totales2/palabras_totales2))*(100/7)
+    puntuacion7= 1- abs((numero_palabras_nuevas1/palabras_totales1)-(numero_palabras_nuevas2/palabras_totales2))*(100/7)
     puntuacion_total= puntuacion1+ puntuacion2 + puntuacion3+ puntuacion4+ puntuacion5 + puntuacion6+ puntuacion7
     return puntuacion_total
 
