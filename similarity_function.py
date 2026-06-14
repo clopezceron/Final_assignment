@@ -14,17 +14,23 @@ def crear_vectores(abecedario,frecuencias, frecuencias_lemas, palabras_totales):
     return vector_top_palabras, vector_top_lemas, vector_abc   
      
   
-def comparar2a2(abecedario1,frecuencias1, frecuencias_lemas1, palabras_totales1, abecedario2,frecuencias2, frecuencias_lemas2, palabras_totales2):
+def comparar2a2(frecuencias1, frecuencias_lemas1,frecuencias2, frecuencias_lemas2,diccionario, libro_en_string1,libro_en_string2 ):
+    numero_palabras_diccionario, palabras_totales1,numero_palabras_distintas1,numero_lemas_distintos1,numero_palabras_unicas1, numero_lemas_unicos1, top_palabras1, top_lemas1, abcdario1, nuevos_caracteres1 =make_statistics(frecuencias1, frecuencias_lemas1, diccionario, libro_en_string1)
     vector_top_palabras1, vector_top_lemas1, vector_abc1= crear_vectores(abecedario1,frecuencias1, frecuencias_lemas1, palabras_totales1)
     vector_top_palabras2, vector_top_lemas2, vector_abc2= crear_vectores(abecedario2,frecuencias2, frecuencias_lemas2, palabras_totales2)
-    
+    numero_palabras_nuevas1=len(nuevos_caracteres1)
+    numero_palabras_nuevas2= len(nuevos_caracteres2)
+    numero_lemas_totales1=sum(list(frecuencias_lemas1.values()))
+    numero_lemas_totales2=sum(list(frecuencias_lemas2.values()))
     puntuacion1=coseno_angulo(vector_top_palabras1, vector_top_palabras2)*20
     puntuacion2=coseno_angulo(vector_top_lemas1, vector_top_lemas2)*20
     puntuacion3=coseno_angulo(vector_abc1, vector_abc2)*20
-    puntuacion4
-    lemas_totales / palabras_totales * 20
-    puntuacion4= palabras_nuevas*20/palabras_totales
-    puntuacion5= palabras_unicas*20/palabras_totales
-    
-def crear y
+    puntuacion4= 1- abs((numero_palabras_distintas1/palabras_totales1)-( numero_palabras_distintas2/palabras_totales2))*10
+    puntuacion5= 1- abs((numero_palabras_unicas1/palabras_totales1)-( numero_palabras_unicas2/palabras_totales2))*10
+    puntuacion6= 1- abs((numero_lemas_totales1/palabras_totales1)-(numero_lemas_totales2/palabras_totales2))*10
+    puntuacion7= 1- abs((numero_palabras_nuevas1/palabras_totales1)-(numero_palabras_nuevas2/palabras_totales2))*10
+    puntuacion_total: puntuacion1+ puntuacion2 + puntuacion3+ puntuacion4+ puntuacion5 + puntuacion6+ puntuacion7
+    return    puntuacion_total
+
+def 
     
