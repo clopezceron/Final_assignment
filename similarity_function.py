@@ -53,7 +53,7 @@ def compare(frecuencias1, frecuencias_lemas1,frecuencias2, frecuencias_lemas2,di
     puntuacion2=coseno_angulo(vector_top_lemas1, vector_top_lemas2)
     puntuacion3=coseno_angulo(vector_abc1, vector_abc2)
     puntuacion4= 1- abs(rpd1 - rpd2)
-    puntuacion5= 1- abs(rpu1 - rdpu2)
+    puntuacion5= 1- abs(rpu1 - rpu2)
     puntuacion6= 1 - abs(rld1 - rld2)
     puntuacion7= 1- abs((numero_palabras_nuevas1/palabras_totales1)-(numero_palabras_nuevas2/palabras_totales2))
     
