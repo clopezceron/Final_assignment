@@ -1,6 +1,6 @@
 import numpy as np
 from tops_obtainer import get_top
-from statistics import make_statistics
+from statistics_code import make_statistics
 def coseno_angulo(u,v):
     producto_punto = np.dot(u, v)
     norma_u = np.linalg.norm(u)
