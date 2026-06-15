@@ -14,7 +14,7 @@ parser.add_argument("--works",required=True,help="Comma-separated list of routs 
 parser.add_argument("--dictionary-stats",action="store_true",help="Show dictionary statistics")
 parser.add_argument("--no-words",action="store_true",help="Show words not present in dictionary")
 parser.add_argument("-f","--frequencies",type=int,help="Show the n most frequent words")
-parser.add_argument("-c","--Compare",nargs=2,help="Determine whether two works were written by the same author")
+parser.add_argument("-c","--compare",nargs=2,help="Determine whether two works were written by the same author")
 
 args = parser.parse_args()
 
