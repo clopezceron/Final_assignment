@@ -1,8 +1,8 @@
 from tops_obtainer import get_top
 from no_words import find_new_words
 from book_processor import process_book
-from statistics import make_statistics
-from statistics import show_single_statistics
+from statistics_code import make_statistics
+from statistics_code import show_single_statistics
 from statistics import show_total_statistics
 from frecuencies_calculator import get_frecuencias
 from similarity_function import compare
@@ -33,13 +33,13 @@ for work in works_files:
     frecuencias, frecuencias_lemas=get_frecuencias(libro_limpio[1],libro_limpio[0]) 
    
     if args.dictionary_stats:
-        numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas, abc, nuevos_caracteres=make_statistics(frecuencias, frecuencias_lemas, diccionario, libro_limpio[3]): 
+        numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas, abc, nuevos_caracteres=make_statistics(frecuencias, frecuencias_lemas, diccionario, libro_limpio[3]) 
         show_single_statistics(work,numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas, abc, nuevos_caracteres)
                          
 libros_juntos_limpio=process_book(libros_juntos)
 frecuencias, frecuencias_lemas=get_frecuencias(libros_juntos_limpio[1],libros_juntos_limpio[0]) 
 if args.dictionary_stats and len(works_files)>1:
-    numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas, abc, nuevos_caracteres=make_statistics(frecuencias, frecuencias_lemas, diccionario,libros_juntos_limpio[3]): 
+    numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas, abc, nuevos_caracteres=make_statistics(frecuencias, frecuencias_lemas, diccionario,libros_juntos_limpio[3]) 
     show_total_statistics(numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas, abc, nuevos_caracteres)
     print ('Number of files= ',len(works_files))    
 elif args.dictionary_stats and len(works_files)==1:
