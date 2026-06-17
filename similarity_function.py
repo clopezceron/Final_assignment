@@ -2,10 +2,16 @@ import numpy as np
 from tops_obtainer import get_top
 from statistics_code import make_statistics
 def coseno_angulo(u,v):
-    producto_punto = np.dot(u, v)
-    norma_u = np.linalg.norm(u)
-    norma_v = np.linalg.norm(v)
-    cos_theta = producto_punto / (norma_u * norma_v)
+    if len(u)<len(v):
+        n=len(u)
+    else:
+        n=len(v)
+    nuevo_u=u[0:n]
+    nuevo_v=v[0:n]
+    producto_punto = np.dot(nuevo_u, nuevo_v)
+    norma_nuevo_u = np.linalg.norm(u)
+    norma_nuevo_v = np.linalg.norm(v)
+    cos_theta = producto_punto / (norma_nuevo_u * norma_nuevo_v)
     return cos_theta
 def crear_vectores(abecedario,frecuencias, frecuencias_lemas, palabras_totales):
     top_palabras, top_lemas=get_top(frecuencias, frecuencias_lemas, 100)
