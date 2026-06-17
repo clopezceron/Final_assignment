@@ -60,14 +60,14 @@ def compare(frecuencias1, frecuencias_lemas1,frecuencias2, frecuencias_lemas2,di
     numero_lemas_totales2=sum(list(frecuencias_lemas2.values()))
     
     #puntuacion1=coseno_angulo(vector_top_palabras1, vector_top_palabras2)
-    puntuacion2=coseno_angulo(vector_top_lemas1, vector_top_lemas2)
+    #puntuacion2=coseno_angulo(vector_top_lemas1, vector_top_lemas2)
     puntuacion3=coseno_angulo(vector_abc1, vector_abc2)
     #puntuacion4= 1- abs(rpd1 - rpd2)
-    puntuacion5= 1- abs(rpu1 - rpu2)
-    puntuacion6= 1 - abs(rld1 - rld2)
+    #puntuacion5= 1- abs(rpu1 - rpu2)
+    #puntuacion6= 1 - abs(rld1 - rld2)
     #puntuacion7= 1- abs((numero_palabras_nuevas1/palabras_totales1)-(numero_palabras_nuevas2/palabras_totales2))
     
     #puntuacion_total= (puntuacion1+ puntuacion2 + puntuacion3+ puntuacion4+ puntuacion5 + puntuacion6+ puntuacion7)*(100/7)
-    puntuacion_total= (puntuacion2*70 + puntuacion3*10+ puntuacion5*10 + puntuacion6*10)
+    puntuacion_total= puntuacion3*100
     
     return puntuacion_total
