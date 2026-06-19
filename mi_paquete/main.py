@@ -1,11 +1,11 @@
-from .tops_obtainer import get_top
-from .no_words import find_new_words
-from .book_processor import process_book
-from .statistics_code import make_statistics
-from .statistics_code import show_single_statistics
-from .statistics_code import show_total_statistics
-from .frecuencies_calculator import get_frecuencias
-from .similarity_function import compare
+from tops_obtainer import get_top
+from no_words import find_new_words
+from book_processor import process_book
+from statistics_code import make_statistics
+from tatistics_code import show_single_statistics
+from statistics_code import show_total_statistics
+from frecuencies_calculator import get_frecuencias
+from similarity_function import compare
 import argparse
 
 parser = argparse.ArgumentParser(description="Literature Analyzer")
