@@ -7,6 +7,7 @@ from statistics_code import show_total_statistics
 from frecuencies_calculator import get_frecuencias
 from similarity_function import compare
 import argparse
+import sys 
 
 parser = argparse.ArgumentParser(description="Literature Analyzer")
 parser.add_argument("--dictionary",required=True, help="Route to the dictionary file")
@@ -15,9 +16,11 @@ parser.add_argument("--dictionary-stats",action="store_true",help="Show dictiona
 parser.add_argument("--no-words",action="store_true",help="Show words not present in dictionary")
 parser.add_argument("-f","--frequencies",type=int,help="Show the n most frequent words")
 parser.add_argument("-c","--compare",nargs=2,help="Determine whether two works were written by the same author")
-
+parser.add_argument("--output",required=True, help="Route to the output file where the analysis will be saved")
 args = parser.parse_args()
 
+output_file = open(args.output, "w", encoding="utf-8")
+sys.stdout = output_file
 with open(args.dictionary, "r", encoding="utf-8") as file:
     diccionario=file.read().lower().split()
   
@@ -62,3 +65,6 @@ if args.compare is not None:
     frecuencias2, frecuencias_lemas2= get_frecuencias(libro_limpio2[1],libro_limpio2[0])
     puntuacion_total= compare(frecuencias1, frecuencias_lemas1,frecuencias2, frecuencias_lemas2,diccionario, libro_limpio1[3], libro_limpio2[3] )
     print ('The books are ',  puntuacion_total, '% similar ') 
+
+output_file.close()
+
