@@ -1,4 +1,4 @@
-from tops_obtainer import get_top
+from .tops_obtainer import get_top
 def make_statistics(frecuencias, frecuencias_lemas, diccionario, libro_en_string):
     numero_palabras=sum(frecuencias.values())
     numero_palabras_distintas=len(frecuencias)              
