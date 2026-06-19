@@ -1,6 +1,6 @@
 import numpy as np
-from tops_obtainer import get_top
-from statistics_code import make_statistics
+from .tops_obtainer import get_top
+from .statistics_code import make_statistics
 def coseno_angulo(u,v):
     if len(u)<len(v):
         n=len(u)
