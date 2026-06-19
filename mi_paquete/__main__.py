@@ -1,11 +1,11 @@
-from tops_obtainer import get_top
-from no_words import find_new_words
-from book_processor import process_book
-from statistics_code import make_statistics
-from statistics_code import show_single_statistics
-from statistics_code import show_total_statistics
-from frecuencies_calculator import get_frecuencias
-from similarity_function import compare
+from .tops_obtainer import get_top
+from .no_words import find_new_words
+from .book_processor import process_book
+from .statistics_code import make_statistics
+from .statistics_code import show_single_statistics
+from .statistics_code import show_total_statistics
+from .frecuencies_calculator import get_frecuencias
+from .similarity_function import compare
 import argparse
 
 parser = argparse.ArgumentParser(description="Literature Analyzer")
@@ -34,6 +34,36 @@ for work in works_files:
     frecuencias, frecuencias_lemas=get_frecuencias(libro_limpio[1],libro_limpio[0]) 
    
     if args.dictionary_stats:
+        numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas, abc, nuevos_caracteres=make_statistics(frecuencias, frecuencias_lemas, diccionario, libro_limpio[3]) 
+        show_single_statistics(work,numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas, abc, nuevos_caracteres)
+                         
+libros_juntos_limpio=process_book(libros_juntos)
+frecuencias, frecuencias_lemas=get_frecuencias(libros_juntos_limpio[1],libros_juntos_limpio[0]) 
+if args.dictionary_stats and len(works_files)>1:
+    numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas, abc, nuevos_caracteres=make_statistics(frecuencias, frecuencias_lemas, diccionario,libros_juntos_limpio[3]) 
+    show_total_statistics(numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas, abc, nuevos_caracteres)
+    print ('Number of files= ',len(works_files))    
+elif args.dictionary_stats and len(works_files)==1:
+        print ('Number of files= ',1)
+     
+if args.no_words:
+    find_new_words(libros_juntos_limpio[1],diccionario)
+
+if args.frequencies is not None:
+    dic_top_palabras, dic_top_lemas=get_top(frecuencias, frecuencias_lemas,args.frequencies)
+    print('The ', args.frequencies, ' most frequent words used by the master with their counters are shown below')
+    print(dic_top_palabras)
+    print('The ', args.frequencies, ' most frequent lemas used by the master with their counters are shown below')
+    print(dic_top_lemas)
+
+if args.compare is not None:
+    libro_limpio1=process_book(args.compare[0])
+    frecuencias1, frecuencias_lemas1= get_frecuencias(libro_limpio1[1],libro_limpio1[0])
+    libro_limpio2=process_book(args.compare[1])
+    frecuencias2, frecuencias_lemas2= get_frecuencias(libro_limpio2[1],libro_limpio2[0])
+    puntuacion_total= compare(frecuencias1, frecuencias_lemas1,frecuencias2, frecuencias_lemas2,diccionario, libro_limpio1[3], libro_limpio2[3] )
+    print ('The books are ',  puntuacion_total, '% similar ') 
+
         numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas, abc, nuevos_caracteres=make_statistics(frecuencias, frecuencias_lemas, diccionario, libro_limpio[3]) 
         show_single_statistics(work,numero_palabras_diccionario,numero_palabras,numero_palabras_distintas,numero_lemas_distintos,numero_palabras_unicas, numero_lemas_unicos, top_palabras, top_lemas, abc, nuevos_caracteres)
                          
