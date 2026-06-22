@@ -6,4 +6,4 @@ build-backend = "setuptools.build_meta"
 name = "text_analizer"
 version = "0.1.0"
 description = "Analices and obtains statistical information of a book"
-dependencies = ["pandas", "numpy", "spacy","spacy-lookups-data", "matplotlib"]
+dependencies = ["pandas", "numpy", "spacy","spacy-lookups-data", "click", "matplotlib"]
